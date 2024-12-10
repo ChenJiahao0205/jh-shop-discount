@@ -6,6 +6,17 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080  # Sentinel Dashboard 地址
+
+feign:
+  sentinel:
+    enabled: true  # 启用 Feign 的 Sentinel 熔断
 
 server:
   servlet:
