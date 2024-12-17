@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  pers.jhshop.fapi.discount.service.fallback.TestApiServiceFallbackFactory,\
-  pers.jhshop.fapi.discount.service.fallback.TestApiServiceFallback
