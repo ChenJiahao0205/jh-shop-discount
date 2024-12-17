@@ -12,12 +12,12 @@ import pers.jhshop.fapi.discount.service.fallback.TestApiServiceFallbackFactory;
  * @author ChenJiahao(五条)
  * @date 2024/12/10 21:49:48
  */
-@FeignClient(value = ServiceConst.SERVICE_NAME, contextId = "TestApiService", fallbackFactory = TestApiServiceFallbackFactory.class)
+@FeignClient(value = "jh-shop-discount-service", contextId = "TestApiService", fallbackFactory = TestApiServiceFallbackFactory.class)
 public interface TestApiService {
 
     // TODO 将JhShopDiscountApiConstants依赖转移到API-Parent
-    String BASE_URL = "fapi/" + "test/";
+    String BASE_URL = "/fapi/" + "/test";
 
-    @PostMapping(BASE_URL + "test-some")
+    @PostMapping("/fapi/test/test-some")
     TestDTO testSome(@RequestBody TestReq testReq);
 }

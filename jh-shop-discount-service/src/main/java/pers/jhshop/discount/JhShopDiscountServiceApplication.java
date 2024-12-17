@@ -9,7 +9,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
 @MapperScan(basePackages = "pers.jhshop.discount.mapper")
-@EnableFeignClients(basePackages = "pers.jhshop.discount.feign")
+@EnableFeignClients(basePackages = "pers.jhshop.fapi")
 @EnableDiscoveryClient
 @SpringBootApplication
 public class JhShopDiscountServiceApplication {

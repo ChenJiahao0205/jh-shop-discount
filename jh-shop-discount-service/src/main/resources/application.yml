@@ -17,13 +17,19 @@ spring:
 feign:
   sentinel:
     enabled: true  # 启用 Feign 的 Sentinel 熔断
+  client:
+    config:
+      default:
+        connectTimeout: 5000  # 连接超时
+        readTimeout: 5000     # 读取超时
 
 server:
-  servlet:
-    context-path: /jh-shop-discount-service
-  port: 8080
+  port: 8081
 
-#logging:
-#  level:
-#    org.springframework: DEBUG
-#    pers.jhshop.user: DEBUG
+logging:
+  level:
+    org.springframework: DEBUG
+    pers.jhshop.user: DEBUG
+    feign: DEBUG                # Feign的调试日志
+    com.alibaba.csp.sentinel: DEBUG  # 如果使用Sentinel
+    org.springframework.cloud.openfeign: DEBUG

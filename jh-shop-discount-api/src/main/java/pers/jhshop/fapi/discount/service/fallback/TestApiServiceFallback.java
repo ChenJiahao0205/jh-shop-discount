@@ -15,11 +15,12 @@ import pers.jhshop.fapi.discount.service.TestApiService;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TestApiServiceFallback implements TestApiService {
+
     private Throwable throwable;
 
     @Override
     public TestDTO testSome(TestReq testReq) {
         log.error("TestApiServiceFallbackFactory fallback, error msg[{}]", throwable.getMessage());
-        return null;
+        return new TestDTO();
     }
 }
